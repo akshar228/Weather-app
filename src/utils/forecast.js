@@ -11,7 +11,7 @@ const forecast = (lng, lat, callback) => {
     } else {
       callback(
         undefined,
-        `Time: ${body.current.observation_time}</br> Temperature: ${body.current.temperature} </br> Feels like: ${body.current.feelslike} </br> Wind speed: ${body.current.wind_speed} </br> Wind degree: ${body.current.wind_degree} ${body.current.wind_dir} </br> Humidity: ${body.current.humidity} </br> Visibility: ${body.current.visibility} </br> UV index: ${body.current.uv_index}`
+        `Time: ${body.current.observation_time}, Temperature: ${body.current.temperature}, Feels like: ${body.current.feelslike}, Wind speed: ${body.current.wind_speed}, Wind degree: ${body.current.wind_degree} ${body.current.wind_dir}, Humidity: ${body.current.humidity}, Visibility: ${body.current.visibility}, UV index: ${body.current.uv_index}`
       );
     }
   });
