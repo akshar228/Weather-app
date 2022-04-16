@@ -1,7 +1,7 @@
 const request = require('request');
 
 const forecast = (lng, lat, callback) => {
-  const url = `http://api.weatherstack.com/current?access_key=47714dc2354957191d6f7b823b3bc06a&query=${lat},${lng}&units=f`;
+  const url = `http://api.weatherstack.com/current?access_key=800e9d1cea6e39825be80bf9d90b684e&query=${lat},${lng}&units=f`;
 
   request({ url, json: true }, (error, { body } = {}) => {
     if (error) {
@@ -11,7 +11,7 @@ const forecast = (lng, lat, callback) => {
     } else {
       callback(
         undefined,
-        `${body.current.weather_descriptions[0]}. It is currently ${body.current.temperature} degress out, and It feels like ${body.current.feelslike}.`
+        `Time: ${body.current.observation_time}</br> Temperature: ${body.current.temperature} </br> Feels like: ${body.current.feelslike} </br> Wind speed: ${body.current.wind_speed} </br> Wind degree: ${body.current.wind_degree} ${body.current.wind_dir} </br> Humidity: ${body.current.humidity} </br> Visibility: ${body.current.visibility} </br> UV index: ${body.current.uv_index}`
       );
     }
   });
